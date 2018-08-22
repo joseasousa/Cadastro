@@ -1,7 +1,11 @@
-import { all, takeLatest, put } from 'redux-saga/effects'
+import { all, takeLatest } from 'redux-saga/effects'
+
+import { Types as UserTypes } from '../store/user'
+
+import { getUsers } from './user'
 
 export default function * rootSaga () {
   return yield all([
-
+    takeLatest(UserTypes.USER_REQUEST, getUsers)
   ])
 }

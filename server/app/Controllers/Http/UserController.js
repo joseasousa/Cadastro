@@ -3,17 +3,59 @@
 const User = use('App/Models/User')
 
 class UserController {
-  async store ({request}) {
-    const data = request.only(['username', 'email', 'password'])
+  async index () {
+    const users = await User.query()
+      .with('file')
+      .fetch()
+
+    return users
+  }
+
+  async store ({ request }) {
+    const data = request.only([
+      'first_name',
+      'last_name',
+      'company',
+      'email',
+      'password'
+    ])
 
     const user = await User.create(data)
     return user
   }
 
-  async index ({request}) {
-    const users = await User.all()
+  async show ({ params }) {
+    const user = await User.findOrFail(params.id)
 
-    return users
+    await user.load('file')
+
+    return user
+  }
+
+  async update ({ request, params }) {
+    const user = await User.findOrFail(params.id)
+    const data = request.only([
+      'first_name',
+      'last_name',
+      'company',
+      'email',
+      'password',
+      'file_id'
+    ])
+
+    user.merge(data)
+
+    await user.save()
+
+    return user
+  }
+
+  async destroy ({params}) {
+    const user = await User.findOrFail(params.id)
+
+    await user.delete()
+
+    return 'Usuario deletado com susseso'
   }
 }
 

@@ -7,8 +7,8 @@ Route.get('/', () => {
 })
 
 Route.resource('users', 'UserController').apiOnly()
+
 Route.post('sessions', 'SessionController.store')
-Route.get('forgot', 'ForgotPasswordController.store')
 
 Route.post('files', 'FileController.store')
 Route.get('files/:id', 'FileController.show')

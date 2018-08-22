@@ -11,6 +11,7 @@ class FileController {
 
     return response.download(Helper.tmpPath(`uploads/${file.file}`))
   }
+
   async store ({ request, response }) {
     try {
       if (!request.file('file')) return

@@ -1,7 +1,7 @@
 'use strict'
 
 const Model = use('Model')
-const Env = use('env')
+const Env = use('Env')
 
 class File extends Model {
   static get computed () {
