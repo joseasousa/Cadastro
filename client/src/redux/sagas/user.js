@@ -9,6 +9,22 @@ export function * getUsers () {
 
     yield put(UserActions.userSuccess(response.data))
   } catch (err) {
-    yield put(UserActions.userFailure(err))
+    yield put(UserActions.userFailure(err.message))
+  }
+}
+
+export function * postUser (action) {
+  const userToSave = {
+    ...action.data
+  }
+
+  console.log(userToSave)
+
+  const user = yield api.post('users', userToSave)
+
+  if (user && user.data && user.data.error) {
+    yield put(UserActions.createUserFailure(user.data.message))
+  } else {
+    yield put(UserActions.createUserSuccess(user.data))
   }
 }

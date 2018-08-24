@@ -10,13 +10,16 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "apisauce": "^0.16.0",
+    "axios": "^0.18.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-dropzone": "^5.0.1",
+    "react-multistep": "^3.2.3",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "react-stepzilla": "^4.7.2",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",
     "redux-devtools-extension": "^2.13.5",
@@ -26,6 +29,7 @@
     "semantic-ui-react": "^0.82.2"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.15.0",
     "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.2",
     "enzyme": "^3.4.4",
@@ -39,7 +43,9 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^3.1.0",
-    "jest": "^23.5.0",
-    "react-test-renderer": "^16.4.2"
+    "react-test-renderer": "^16.4.2",
+    "redux-mock-store": "^1.5.3",
+    "redux-saga-tester": "^1.0.379",
+    "sinon": "^6.1.5"
   }
 }

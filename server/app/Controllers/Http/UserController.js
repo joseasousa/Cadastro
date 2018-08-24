@@ -17,6 +17,7 @@ class UserController {
       'last_name',
       'company',
       'email',
+      'file_id',
       'password'
     ])
 

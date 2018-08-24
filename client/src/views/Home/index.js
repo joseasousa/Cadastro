@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Image, Segment, Button } from 'semantic-ui-react'
+import { Image } from 'semantic-ui-react'
 
 import { connect } from 'react-redux'
 import Users from './Users'
@@ -16,20 +16,31 @@ class Home extends Component {
 
     return (
       <div className='ui container'>
-        <div className='center'>
-          <Image
-            centered
-            src='https://dgivdslhqe3qo.cloudfront.net/careers/photos/23661/thumb_photo_1484531612.png'
-          />
-          <div className='row'>
-            <h1>Users</h1>
+        <div className='ui grid'>
 
-            <Link className='button ui teal' to='/add'>
-              Add new User
-            </Link>
+          <div className='row center'>
+            <Image
+              centered
+              src='https://dgivdslhqe3qo.cloudfront.net/careers/photos/23661/thumb_photo_1484531612.png'
+            />
+          </div>
+
+          <div className=' column row'>
+            <div className='left floated column'>
+              <h1>Users</h1>
+            </div>
+
+            <div className='right floated '>
+              <Link className='button ui teal' to='/add'>
+                Add new User
+              </Link>
+            </div>
           </div>
         </div>
-        {loading ? <h1>...</h1> : <Users users={users} />}
+
+        <div className='row'>
+          {loading ? <h1>...</h1> : <Users users={users} />}
+        </div>
       </div>
     )
   }
