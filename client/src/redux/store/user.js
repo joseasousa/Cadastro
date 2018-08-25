@@ -5,6 +5,8 @@ export const { Types, Creators } = createActions({
   userSuccess: ['data'],
   userFailure: ['error'],
 
+  storeUser: ['data'],
+
   createUserRequest: ['data'],
   createUserSuccess: ['data'],
   createUserFailure: ['error']
@@ -57,10 +59,17 @@ const createFailure = (state = INITIAL_STATE, action) => ({
   saved: false
 })
 
+const store = (state = INITIAL_STATE, action) => ({
+  ...state,
+  data: action.data
+})
+
 export default createReducer(INITIAL_STATE, {
   [Types.USER_REQUEST]: request,
   [Types.USER_SUCCESS]: success,
   [Types.USER_FAILURE]: failure,
+
+  [Types.STORE_USER]: store,
 
   [Types.CREATE_USER_REQUEST]: create,
   [Types.CREATE_USER_SUCCESS]: createSuccess,

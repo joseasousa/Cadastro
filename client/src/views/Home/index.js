@@ -17,7 +17,6 @@ class Home extends Component {
     return (
       <div className='ui container'>
         <div className='ui grid'>
-
           <div className='row center'>
             <Image
               centered
@@ -25,17 +24,18 @@ class Home extends Component {
             />
           </div>
 
-          <div className=' column row'>
+          <div className='column row ' style={{ paddingBottom: 20 }}>
             <div className='left floated column'>
               <h1>Users</h1>
             </div>
 
-            <div className='right floated '>
+            <div className='right floated' style={{ padding: 10 }}>
               <Link className='button ui teal' to='/add'>
                 Add new User
               </Link>
             </div>
           </div>
+
         </div>
 
         <div className='row'>
