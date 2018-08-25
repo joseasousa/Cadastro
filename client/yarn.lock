@@ -6214,13 +6214,6 @@ react-is@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
 
-react-multistep@^3.2.3:
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/react-multistep/-/react-multistep-3.2.3.tgz#fb8fc576beb3571c21d693f40be2685477e50131"
-  dependencies:
-    react "^16.4.2"
-    react-dom "^16.4.2"
-
 react-reconciler@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.7.0.tgz#9614894103e5f138deeeb5eabaf3ee80eb1d026d"

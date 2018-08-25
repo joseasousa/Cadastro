@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, Table } from 'semantic-ui-react'
-import Proptypes from 'prop-types'
+
 import moment from 'moment'
 
 const User = ({ user }) => (
@@ -18,7 +18,8 @@ const User = ({ user }) => (
       </div>
     </Table.Cell>
     <Table.Cell collapsing textAlign='right'>
-      {moment(user.created_at).format('d MMM, YYYY, HH:mm')}
+      {moment(user.created_at)
+        .format('d MMM, YYYY, HH:mm')}
     </Table.Cell>
   </Table.Row>
 )
