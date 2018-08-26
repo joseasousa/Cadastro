@@ -19,7 +19,7 @@ const User = ({ user }) => (
     </Table.Cell>
     <Table.Cell collapsing textAlign='right'>
       {moment(user.created_at)
-        .format('d MMM, YYYY, HH:mm')}
+        .format('D MMM, YYYY, HH:mm')}
     </Table.Cell>
   </Table.Row>
 )

@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import ImageForm from './ImageForm'
 import UserFrom from './UserForm'
 
-const Add = ({match}) => (
+const Add = ({ match }) => (
   <Fragment>
     <Switch>
       <Route path={`${match.path}/`} exact component={UserFrom} />

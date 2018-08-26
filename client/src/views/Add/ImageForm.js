@@ -39,11 +39,11 @@ class ImageForm extends Component {
   }
 
   cad() {
-    let { user } = this.props
+    let { user, createUser } = this.props
     const { file_id } = this.state
     user = { ...user, file_id }
-
-    this.props(user)
+    console.log(user)
+    createUser(user)
   }
 
   render() {
@@ -62,24 +62,28 @@ class ImageForm extends Component {
         <div className="step step2">
           <div className="row">
             <Header as="h3" content="Cadastro" textAlign="center" />
+
             <Grid
               textAlign="center"
               style={{ height: '100%' }}
               verticalAlign="middle"
               horizontalalign="middle"
             >
-
-              <Header as="h2" color="teal" textAlign="center">
-                <Image
-                  centered
-                  src="https://dgivdslhqe3qo.cloudfront.net/careers/photos/23661/thumb_photo_1484531612.png"
-                />
-              </Header>
+              <Image
+                centered
+                src="https://dgivdslhqe3qo.cloudfront.net/careers/photos/23661/thumb_photo_1484531612.png"
+              />
+              <Grid.Row>
+                <Header as="h2"  textAlign="center">
+                  Profile photo
+                </Header>
+              </Grid.Row>
               <Grid.Row>
                 <ReactDropzone
-                accept="image/*"
-                multiple={false}
-                onDrop={this.onPreviewDrop}>
+                  accept="image/*"
+                  multiple={false}
+                  onDrop={this.onPreviewDrop}
+                >
                   Drop an image, get a preview!
                   <Fragment>
                     <Image
@@ -94,10 +98,10 @@ class ImageForm extends Component {
               </Grid.Row>
 
               <Grid.Row>
-                <Link to="/add">
+                <Button basic as={Link} to="/add">
                   <Icon name="angle left" size="big" />
                   Voltar
-                </Link>
+                </Button>
 
                 <Button color="teal" onClick={() => this.cad()}>
                   Finish
