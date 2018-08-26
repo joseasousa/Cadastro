@@ -15,8 +15,7 @@ class ImageForm extends Component {
       file: {
         preview: ''
       },
-      file_id: '',
-      redirect: false
+      file_id: ''
     }
   }
 
@@ -42,20 +41,22 @@ class ImageForm extends Component {
     let { user, createUser } = this.props
     const { file_id } = this.state
     user = { ...user, file_id }
-    console.log(user)
+
     createUser(user)
   }
 
   render() {
-    const { file, redirect } = this.state
+    const { file } = this.state
+    const {saved, user} = this.props
     const previewStyle = {
       display: 'inline',
       width: 100,
       height: 100
     }
-    if (redirect) {
+    if (saved ) {
       return <Redirect to="/" />
     }
+
 
     return (
       <Fragment>
@@ -115,7 +116,8 @@ class ImageForm extends Component {
   }
 }
 const mapStateToProps = state => ({
-  user: state.user.data
+  user: state.user.user,
+  saved: state.user.saved
 })
 
 const mapDispatchToProps = dispatch => ({

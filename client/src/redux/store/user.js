@@ -5,18 +5,20 @@ export const { Types, Creators } = createActions({
   userSuccess: ['data'],
   userFailure: ['error'],
 
-  storeUser: ['data'],
+  storeUser: ['user'],
 
-  createUserRequest: ['data'],
-  createUserSuccess: ['data'],
+  createUserRequest: ['user'],
+  createUserSuccess: ['user'],
   createUserFailure: ['error']
 })
 
 const INITIAL_STATE = {
   data: [],
+  user: null,
   loading: false,
   error: null,
-  isSaving: false
+  isSaving: false,
+  saved: false
 }
 
 const request = (state = INITIAL_STATE, action) => ({
@@ -39,7 +41,7 @@ const failure = (state = INITIAL_STATE, action) => ({
 const create = (state = INITIAL_STATE, action) => ({
   ...state,
   isSaving: true,
-  data: action.data,
+  user: action.user,
   error: false,
   errorMessage: '',
   saved: false
@@ -48,20 +50,21 @@ const create = (state = INITIAL_STATE, action) => ({
 const createSuccess = (state = INITIAL_STATE, action) => ({
   ...state,
   isSaving: false,
-  user: action.data,
+  user: action.user,
   saved: true
 })
 
 const createFailure = (state = INITIAL_STATE, action) => ({
   ...state,
   isSaving: false,
-  errorMessage: action.payload.error,
+  errorMessage: action.error,
+  user: {},
   saved: false
 })
 
 const store = (state = INITIAL_STATE, action) => ({
   ...state,
-  data: action.data
+  user: action.user
 })
 
 export default createReducer(INITIAL_STATE, {

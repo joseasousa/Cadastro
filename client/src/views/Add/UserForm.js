@@ -137,7 +137,7 @@ class Add extends Component {
 }
 
 const mapStateToProps = state => ({
-  user : state.user.data
+  user : state.user.user
 })
 
 const mapDispatchToProps = dispatch => ({
