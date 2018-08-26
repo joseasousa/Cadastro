@@ -3,6 +3,24 @@
 # Objetivo
 O objetivo deste desafio é criar um formulário de cadastro de usuário e uma listagem.
 
+## Server
+
+```sh
+git clone https://github.com/joseasousa/starWrs.git
+cd readable/server
+yarn
+adonis migrate:run
+adonis serve --dev
+```
+
+## App
+```sh
+git clone https://github.com/joseasousa/starWrs.git
+cd readable/client
+yarn
+yarn start
+```
+
 # Requisitos
 
 ## Geral
